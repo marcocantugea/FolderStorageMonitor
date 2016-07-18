@@ -31,8 +31,10 @@ Namespace com.lib.objects
             If Not IsNothing(Item) Then
                 If Not Item.Fileinformation.Extension.Equals("") Then
                     If IO.File.Exists(Item.Fileinformation.FullName) Then
-                        _Items.Add(Item)
-                        Item.Serial = position
+                        If Not ExcludeExt(Item.Fileinformation.Extension) Then
+                            _Items.Add(Item)
+                            Item.Serial = position
+                        End If
                     End If
 
                 End If
@@ -113,6 +115,29 @@ Namespace com.lib.objects
             End If
 
             Return message
+        End Function
+
+        Public Function ExcludeExt(ByVal ext As String) As Boolean
+            Dim exclude As Boolean = False
+            Dim extentionext() As String = GetExcludedExtention()
+            If Not IsNothing(extentionext) Then
+                For Each item As String In extentionext
+                    If item.Equals(ext) Then
+                        exclude = True
+                    End If
+                Next
+            End If
+            Return exclude
+        End Function
+
+        Public Function GetExcludedExtention() As String()
+            Dim ext() As String
+            If Not IsNothing(Configuration.ConfigurationSettings.AppSettings("excludedext")) Then
+                Dim valueas As String = Configuration.ConfigurationSettings.AppSettings("excludedext")
+                ext = valueas.Split("|")
+            End If
+            Return ext
+
         End Function
 
     End Class
