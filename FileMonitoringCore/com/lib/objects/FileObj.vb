@@ -1,9 +1,77 @@
-﻿Namespace com.lib.objects
+﻿Imports System.Timers
+
+Namespace com.lib.objects
     Public Class FileObj
 
         Private _FileInformation As IO.FileInfo
         Private _Serial As Integer
+        Private WithEvents _Timer As Timer
+        Private _timeout As Boolean = True
 
+        Private Sub _Timer_enlapsed(source As Object, e As ElapsedEventArgs)
+            _timeout = True
+            _Timer.Enabled = False
+        End Sub
+
+        Public Function GetExpirationElapsedTime() As String
+            Return _Timer.Interval.ToString()
+        End Function
+
+        Public Sub StartExpirationTime()
+            'Get the configuration of the expiration time from the config file
+            Dim expirationtimeminutes As Double
+            Dim timerExpireMiliSeconds As Double
+            Try
+                expirationtimeminutes = Double.Parse(Configuration.ConfigurationSettings.AppSettings("ExpireFileTimeInMinutes"))
+            Catch ex As Exception
+                'If the value does not exist it will set it as default value
+                ' it will set it as 1440 minutes = 1 day
+                expirationtimeminutes = 1440
+            End Try
+
+            Try
+                timerExpireMiliSeconds = expirationtimeminutes * 60000
+            Catch ex As Exception
+                timerExpireMiliSeconds = 86400000
+            End Try
+
+            SetTime(timerExpireMiliSeconds)
+            StartTime()
+
+        End Sub
+
+        Public Sub StartTime()
+            _Timer.Start()
+            If _timeout Then
+                _timeout = False
+            End If
+        End Sub
+
+        Public Sub SetTime(timevalue As Double)
+            _Timer = New Timers.Timer
+            _Timer.Interval = timevalue
+            _Timer.AutoReset = False
+            _Timer.Enabled = True
+            AddHandler _Timer.Elapsed, New ElapsedEventHandler(AddressOf _Timer_enlapsed)
+        End Sub
+
+        Public Property Time As Timers.Timer
+            Get
+                Return _Timer
+            End Get
+            Set(value As Timers.Timer)
+                _Timer = value
+            End Set
+        End Property
+
+        Public Property timeout As Boolean
+            Get
+                Return _timeout
+            End Get
+            Set(value As Boolean)
+                _timeout = value
+            End Set
+        End Property
 
         Public Property Serial() As Integer
             Get
@@ -94,7 +162,7 @@
 
         Public ReadOnly Property FullPathFile() As String
             Get
-                Return _FileInformation.FullName 
+                Return _FileInformation.FullName
             End Get
         End Property
 

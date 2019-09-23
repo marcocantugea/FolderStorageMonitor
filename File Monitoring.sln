@@ -1,6 +1,8 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FileMonitoringCore", "FileMonitoringCore\FileMonitoringCore.vbproj", "{C9EC4DA0-A341-404B-BBAF-A353305B229F}"
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FileMonitoringServer", "FileMonitoringServer\FileMonitoringServer.vbproj", "{DE655EF3-EC3D-4BF9-8B76-A656C11A60A2}"

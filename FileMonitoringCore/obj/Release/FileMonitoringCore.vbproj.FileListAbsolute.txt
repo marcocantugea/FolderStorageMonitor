@@ -7,3 +7,11 @@ C:\Documents and Settings\Administrator\Desktop\FileMonitoring\File Monitoring\F
 C:\Documents and Settings\Administrator\Desktop\FileMonitoring\File Monitoring\FileMonitoringCore\obj\Release\FileMonitoringCore.dll
 C:\Documents and Settings\Administrator\Desktop\FileMonitoring\File Monitoring\FileMonitoringCore\obj\Release\FileMonitoringCore.xml
 C:\Documents and Settings\Administrator\Desktop\FileMonitoring\File Monitoring\FileMonitoringCore\obj\Release\FileMonitoringCore.pdb
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\FileMonitoringCore.dll
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\FileMonitoringCore.pdb
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\FileMonitoringCore.xml
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.Resources.resources
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.vbproj.GenerateResource.Cache
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.dll
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.xml
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.pdb

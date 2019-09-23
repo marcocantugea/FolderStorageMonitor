@@ -13,3 +13,19 @@ C:\Documents and Settings\Administrator\Desktop\FileMonitoring\File Monitoring\F
 C:\Documents and Settings\Administrator\Desktop\FileMonitoring\File Monitoring\FileMonitoringServer\obj\Release\FileMonitoringServer.exe
 C:\Documents and Settings\Administrator\Desktop\FileMonitoring\File Monitoring\FileMonitoringServer\obj\Release\FileMonitoringServer.xml
 C:\Documents and Settings\Administrator\Desktop\FileMonitoring\File Monitoring\FileMonitoringServer\obj\Release\FileMonitoringServer.pdb
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\bin\Release\FileMonitoringServer.exe.config
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\bin\Release\FileMonitoringServer.exe
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\bin\Release\FileMonitoringServer.pdb
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\bin\Release\FileMonitoringServer.xml
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\bin\Release\FileMonitoringCore.dll
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\bin\Release\FileMonitoringCore.pdb
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\bin\Release\FileMonitoringCore.xml
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\obj\Release\FileMonitoringServer.vbprojResolveAssemblyReference.cache
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\obj\Release\FileMonitoringServer.BlackListControl.resources
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\obj\Release\FileMonitoringServer.Form1.resources
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\obj\Release\FileMonitoringServer.MainWindow.resources
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\obj\Release\FileMonitoringServer.Resources.resources
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\obj\Release\FileMonitoringServer.vbproj.GenerateResource.Cache
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\obj\Release\FileMonitoringServer.exe
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\obj\Release\FileMonitoringServer.xml
+C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringServer\obj\Release\FileMonitoringServer.pdb

@@ -140,5 +140,63 @@ Namespace com.lib.objects
 
         End Function
 
+        'functiona added. Remove item from list
+        Public Sub Remove(Fileobj As FileObj)
+            _Items.Remove(Fileobj)
+        End Sub
+
+        Public Sub RemoveByfullPath(fullpathFilename As String)
+            Dim index As Integer = -1
+            Dim removeitem As Boolean
+            Dim indexselected As Integer
+            For Each file As FileObj In _Items
+                index = index + 1
+                If file.FullPathFile = fullpathFilename Then
+                    removeitem = True
+                    indexselected = index
+                End If
+            Next
+
+            If removeitem Then
+                _Items.RemoveAt(index)
+            End If
+
+
+        End Sub
+
+        Public Sub Remove(filename As String)
+            Dim index As Integer = -1
+            Dim removeitem As Boolean
+            Dim indexselected As Integer
+            For Each file As FileObj In _Items
+                index = index + 1
+                If file.FileName = filename Then
+                    removeitem = True
+                    indexselected = index
+                End If
+            Next
+
+            If removeitem Then
+                _Items.RemoveAt(index)
+            End If
+
+
+        End Sub
+
+        Public Sub Clear()
+            _Items.Clear()
+            position = -1
+        End Sub
+
+        Public Function ExistFileInItems(fileobj As FileObj) As Boolean
+            Dim exist As Boolean = False
+            For Each item As FileObj In _Items
+                If item.FullPathFile = fileobj.FullPathFile Then
+                    exist = True
+                End If
+            Next
+            Return exist
+        End Function
+
     End Class
 End Namespace
