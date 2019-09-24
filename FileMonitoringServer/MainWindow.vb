@@ -27,12 +27,23 @@
             If Not filecreated.Extension.Equals("") Then
                 Dim fileobj As New FileMonitoringCore.com.lib.objects.FileObj(filecreated)
                 _ItemsCollected.Add(fileobj)
+
+                'if the file is JPEG (photo) and is biger that 2 mb
+                Dim applyresizephotos As Boolean = False
+                applyresizephotos = Boolean.Parse(Configuration.ConfigurationSettings.AppSettings("ResizePhotos"))
+                If applyresizephotos Then
+                    If fileobj.Fileinformation.Extension.ToUpper = ".JPG" And fileobj.SizeFileinMB >= 2 Then
+                        Dim apptoresize As String = Configuration.ConfigurationSettings.AppSettings("AppToResizePhotos")
+                        Dim arguments As String = "-c resizephoto """ & fileobj.FullPathFile & """ "
+                        RunCMDCom(apptoresize, arguments, True)
+                    End If
+                End If
                 Try
                     addedtoblacklist = ApplyBlackList(fileobj)
                 Catch ex As Exception
 
                 End Try
-              
+
                 If addedtoblacklist Then
                     If fileobj.SizeFileinMB <= 0.9 Then
                         RichTextBox1.AppendText(fileobj.FullPathFile.ToString & " Size:" & fileobj.SizeFileinKB.ToString & " KB")
@@ -357,7 +368,7 @@
                 If Not _SelectedFilesFromblacklist.ExistFileInItems(file) Then
                     _Blacklist.Add(file)
                 End If
-                
+
             Next
 
         End If
@@ -388,4 +399,16 @@
         CreateLog(Date.Now)
         MsgBox("Log Saved in " & Configuration.ConfigurationSettings.AppSettings("LogFiles"), MsgBoxStyle.Information, "File Monitoring System -- Save Log")
     End Sub
+
+    Public Sub RunCMDCom(command As String, arguments As String, permanent As Boolean)
+        Dim p As Process = New Process()
+        Dim pi As ProcessStartInfo = New ProcessStartInfo()
+        'pi.Arguments = " " + If(permanent = True, "/K", "/C") + " " + command + " " + arguments
+        'pi.FileName = "cmd.exe"
+        pi.Arguments = arguments
+        pi.FileName = command
+        p.StartInfo = pi
+        p.Start()
+    End Sub
+
 End Class
