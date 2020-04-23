@@ -15,3 +15,11 @@ C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonit
 C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.dll
 C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.xml
 C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.pdb
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\FileMonitoringCore.dll
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\FileMonitoringCore.pdb
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\FileMonitoringCore.xml
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.Resources.resources
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.vbproj.GenerateResource.Cache
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.dll
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.xml
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.pdb

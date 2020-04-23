@@ -319,7 +319,10 @@
                 If blacklistbackup Then
                     'Create a copy of the file before delete
                     Dim backupfolder As String = Configuration.ConfigurationSettings.AppSettings("BlacklistFolderBackup")
-                    System.IO.File.Copy(file.FullPathFile, backupfolder & "\" & file.FileName)
+                    If Not IO.File.Exists(backupfolder & "\" & file.FileName) Then
+                        System.IO.File.Copy(file.FullPathFile, backupfolder & "\" & file.FileName)
+                    End If
+
                 End If
 
                 Try
