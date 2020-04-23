@@ -68,9 +68,11 @@
     <Compile Include="com\lib\ADO\ADOFileObjs.vb" />
     <Compile Include="com\lib\file\TextFileWriter.vb" />
     <Compile Include="com\lib\file\XMLControler.vb" />
+    <Compile Include="com\lib\managers\ImageManager.vb" />
     <Compile Include="com\lib\notifications\EmailSender.vb" />
     <Compile Include="com\lib\objects\FileObj.vb" />
     <Compile Include="com\lib\objects\FileObjCollection.vb" />
+    <Compile Include="com\lib\objects\ImageObj.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
       <AutoGen>True</AutoGen>
@@ -106,7 +108,12 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\mcgImageTools\mcgImageTools.csproj">
+      <Project>{3a0dd293-98e1-4d5c-b7f9-4298f35b69be}</Project>
+      <Name>mcgImageTools</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

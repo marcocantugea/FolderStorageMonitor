@@ -3,12 +3,12 @@
 Namespace com.lib.objects
     Public Class FileObj
 
-        Private _FileInformation As IO.FileInfo
-        Private _Serial As Integer
-        Private WithEvents _Timer As Timer
-        Private _timeout As Boolean = True
+        Protected _FileInformation As IO.FileInfo
+        Protected _Serial As Integer
+        Protected WithEvents _Timer As Timer
+        Protected _timeout As Boolean = True
 
-        Private Sub _Timer_enlapsed(source As Object, e As ElapsedEventArgs)
+        Protected Overridable Sub _Timer_enlapsed(source As Object, e As ElapsedEventArgs)
             _timeout = True
             _Timer.Enabled = False
         End Sub

@@ -6,7 +6,7 @@
     Private _Blacklist As New FileMonitoringCore.com.lib.objects.FileObjCollection
     Private _DeletedItems As New FileMonitoringCore.com.lib.objects.FileObjCollection
     Public _SelectedFilesFromblacklist As New FileMonitoringCore.com.lib.objects.FileObjCollection
-
+    Private _ImageList As New List(Of FileMonitoringCore.com.lib.objects.ImageObj)
 
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         FolderBrowserDialog1.ShowDialog()
@@ -33,9 +33,21 @@
                 applyresizephotos = Boolean.Parse(Configuration.ConfigurationSettings.AppSettings("ResizePhotos"))
                 If applyresizephotos Then
                     If fileobj.Fileinformation.Extension.ToUpper = ".JPG" And fileobj.SizeFileinMB >= 2 Then
-                        Dim apptoresize As String = Configuration.ConfigurationSettings.AppSettings("AppToResizePhotos")
-                        Dim arguments As String = "-c resizephoto """ & fileobj.FullPathFile & """ "
-                        RunCMDCom(apptoresize, arguments, True)
+                        'Dim apptoresize As String = Configuration.ConfigurationSettings.AppSettings("AppToResizePhotos")
+                        'Dim arguments As String = "-c resizephoto """ & fileobj.FullPathFile & """ "
+                        'RunCMDCom(apptoresize, arguments, True)
+                        Dim radio As Double = 0.5
+                        Try
+                            radio = Double.Parse(Configuration.ConfigurationSettings.AppSettings("PercentRationImageToCompress")) / 100
+                        Catch ex As Exception
+
+                        End Try
+
+                        Dim NewImage As New FileMonitoringCore.com.lib.objects.ImageObj(filecreated)
+                        NewImage.PercentRationToCompress = radio
+                        NewImage.StartExpirationTime()
+                        _ImageList.Add(NewImage)
+
                     End If
                 End If
                 Try
@@ -82,6 +94,7 @@
 
             End If
         Catch ex As Exception
+
 
         End Try
     End Sub
@@ -319,7 +332,7 @@
                 If blacklistbackup Then
                     'Create a copy of the file before delete
                     Dim backupfolder As String = Configuration.ConfigurationSettings.AppSettings("BlacklistFolderBackup")
-                    If Not IO.File.Exists(backupfolder & "\" & file.FileName) Then
+                    If Not IO.File.Exists(backupfolder & "\" & file.FileName) And IO.File.Exists(file.FullPathFile) Then
                         System.IO.File.Copy(file.FullPathFile, backupfolder & "\" & file.FileName)
                     End If
 
@@ -349,6 +362,7 @@
 
         lbl_TotalRemoved.Text = GetTotalDeletedInMemory()
 
+        CleanItemsExpiredFromImageList()
     End Sub
 
     Private Sub btn_viewblacklist_Click(sender As Object, e As EventArgs) Handles btn_viewblacklist.Click
@@ -374,6 +388,21 @@
 
             Next
 
+        End If
+    End Sub
+
+    Public Sub CleanItemsExpiredFromImageList()
+        If _ImageList.Count > 0 Then
+            Dim bk_imaglist As New List(Of FileMonitoringCore.com.lib.objects.ImageObj)
+            bk_imaglist.AddRange(_ImageList)
+            If bk_imaglist.Count > 0 Then
+                _ImageList.Clear()
+                For Each Image As FileMonitoringCore.com.lib.objects.ImageObj In bk_imaglist
+                    If Not Image.timeout Then
+                        _ImageList.Add(Image)
+                    End If
+                Next
+            End If
         End If
     End Sub
 

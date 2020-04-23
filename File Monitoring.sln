@@ -7,6 +7,10 @@ Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FileMonitoringCore", "FileM
 EndProject
 Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FileMonitoringServer", "FileMonitoringServer\FileMonitoringServer.vbproj", "{DE655EF3-EC3D-4BF9-8B76-A656C11A60A2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mcgImageTools", "mcgImageTools\mcgImageTools.csproj", "{3A0DD293-98E1-4D5C-B7F9-4298F35B69BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileMonitoringServerTestingUnit", "FileMonitoringServerTestingUnit\FileMonitoringServerTestingUnit.csproj", "{9685FC0B-DDE9-416C-85A4-23A218ECE686}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +25,14 @@ Global
 		{DE655EF3-EC3D-4BF9-8B76-A656C11A60A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE655EF3-EC3D-4BF9-8B76-A656C11A60A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE655EF3-EC3D-4BF9-8B76-A656C11A60A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0DD293-98E1-4D5C-B7F9-4298F35B69BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0DD293-98E1-4D5C-B7F9-4298F35B69BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0DD293-98E1-4D5C-B7F9-4298F35B69BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0DD293-98E1-4D5C-B7F9-4298F35B69BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9685FC0B-DDE9-416C-85A4-23A218ECE686}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9685FC0B-DDE9-416C-85A4-23A218ECE686}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9685FC0B-DDE9-416C-85A4-23A218ECE686}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9685FC0B-DDE9-416C-85A4-23A218ECE686}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

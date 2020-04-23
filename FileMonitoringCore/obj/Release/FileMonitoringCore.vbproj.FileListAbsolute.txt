@@ -18,6 +18,9 @@ C:\Users\LM4PCVIT01\Desktop\FolderStorage Monitor\FolderStorageMonitor\FileMonit
 D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\FileMonitoringCore.dll
 D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\FileMonitoringCore.pdb
 D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\FileMonitoringCore.xml
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\mcgImageTools.dll
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\bin\Release\mcgImageTools.pdb
+D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.vbprojResolveAssemblyReference.cache
 D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.Resources.resources
 D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.vbproj.GenerateResource.Cache
 D:\Proyectos Desarrollos\github\FolderStorageMonitor\FolderStorageMonitor\FileMonitoringCore\obj\Release\FileMonitoringCore.dll
