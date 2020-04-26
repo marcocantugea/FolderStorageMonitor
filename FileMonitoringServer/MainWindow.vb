@@ -21,7 +21,7 @@
 
     Private Sub FileSystemWatcher1_Created(ByVal sender As Object, ByVal e As System.IO.FileSystemEventArgs) Handles FileSystemWatcher1.Created
         Try
-            System.Threading.Thread.Sleep(100)
+            System.Threading.Thread.Sleep(500)
             Dim filecreated As New IO.FileInfo(e.FullPath)
             Dim addedtoblacklist As Boolean = False
             If Not filecreated.Extension.Equals("") Then
@@ -40,6 +40,7 @@
                         Try
                             radio = Double.Parse(Configuration.ConfigurationSettings.AppSettings("PercentRationImageToCompress")) / 100
                         Catch ex As Exception
+                            Throw
 
                         End Try
 
@@ -53,7 +54,7 @@
                 Try
                     addedtoblacklist = ApplyBlackList(fileobj)
                 Catch ex As Exception
-
+                    Throw
                 End Try
 
                 If addedtoblacklist Then
@@ -95,7 +96,7 @@
             End If
         Catch ex As Exception
 
-
+            Throw
         End Try
     End Sub
 
@@ -169,6 +170,7 @@
             Dim Filename As String = Application.StartupPath & "\logs\" & Date.Now.ToString("MMddyymmss") & "FileMonitoring.xml"
             xmlsaver.CreateXML(Filename, _ItemsCollected)
         Catch ex As Exception
+            Throw
 
         End Try
     End Sub
@@ -293,6 +295,7 @@
             Next
 
         Catch ex As Exception
+            Throw
 
         End Try
 
@@ -307,6 +310,7 @@
                 End If
             Next
         Catch ex As Exception
+            Throw
 
         End Try
 
@@ -326,6 +330,7 @@
                 Try
                     blacklistbackup = Boolean.Parse(Configuration.ConfigurationSettings.AppSettings("BlacklistBackup"))
                 Catch ex As Exception
+                    Throw
 
                 End Try
 
@@ -346,6 +351,7 @@
                     RichTextBox1.SelectedText = "**** File removed from system >> " & file.FullPathFile & " " & Date.Now.ToString("dd-MM-yyyy hh:mm:ss") & vbNewLine
                     filesdeleted.Add(file.FullPathFile)
                 Catch ex As Exception
+                    Throw
 
                 End Try
             Else
@@ -392,18 +398,34 @@
     End Sub
 
     Public Sub CleanItemsExpiredFromImageList()
+        'for debug
+        'Dim newform As New Form()
+        'Dim lbl_displaytime As New Label
+        'newform.Controls.Add(lbl_displaytime)
+        'newform.Width = 400
+        'newform.Height = 400
+        'lbl_displaytime.Width = newform.Width
+        'lbl_displaytime.Height = newform.Height
+        'Dim sb As New System.Text.StringBuilder
         If _ImageList.Count > 0 Then
             Dim bk_imaglist As New List(Of FileMonitoringCore.com.lib.objects.ImageObj)
             bk_imaglist.AddRange(_ImageList)
             If bk_imaglist.Count > 0 Then
                 _ImageList.Clear()
                 For Each Image As FileMonitoringCore.com.lib.objects.ImageObj In bk_imaglist
+                    'sb.Append("Image : " & Image.FileName & " Time to Expire:" & Image.Time.Interval.ToString & Environment.NewLine)
                     If Not Image.timeout Then
                         _ImageList.Add(Image)
                     End If
                 Next
+            Else
+
+                'sb.Append("no items on bk_imaglist")
             End If
         End If
+        'lbl_displaytime.Text = sb.ToString
+        'newform.Show()
+
     End Sub
 
     Public Sub CreateLog(RunDay As Date)

@@ -17,7 +17,7 @@ Namespace com.lib.objects
             Return _Timer.Interval.ToString()
         End Function
 
-        Public Sub StartExpirationTime()
+        Public Overridable Sub StartExpirationTime()
             'Get the configuration of the expiration time from the config file
             Dim expirationtimeminutes As Double
             Dim timerExpireMiliSeconds As Double

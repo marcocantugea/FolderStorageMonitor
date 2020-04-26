@@ -23,6 +23,27 @@ Namespace com.lib.objects
             'MyBase._Timer_enlapsed(source, e)
         End Sub
 
+        Public Overrides Sub StartExpirationTime()
+            Dim expirationtimeminutes As Double
+            Dim timerExpireMiliSeconds As Double
+            Try
+                expirationtimeminutes = Double.Parse(Configuration.ConfigurationSettings.AppSettings("ExpirePictureTimeInMinutes"))
+            Catch ex As Exception
+                'If the value does not exist it will set it as default value
+                ' it will set it as 1440 minutes = 1 day
+                expirationtimeminutes = 5
+            End Try
+
+            Try
+                timerExpireMiliSeconds = expirationtimeminutes * 60000
+            Catch ex As Exception
+                timerExpireMiliSeconds = 300000
+            End Try
+
+            SetTime(timerExpireMiliSeconds)
+            StartTime()
+        End Sub
+
         Public Sub ResizeImage()
             If Not System.IO.File.Exists(_FileInformation.FullName) Then
                 Throw New FileNotFoundException("ImageObj:_Timer_enlapsed: File do not exist")
